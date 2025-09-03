@@ -1,0 +1,62 @@
+body.rtl {
+  text-align: right;
+  direction: rtl;
+
+  .langlink {
+    font-size: 16px;
+    margin-top: 9px;
+    font-weight: 400 !important;
+  }
+
+  .sectionTitle {
+    h6 {
+      padding-right: 82px;
+
+      @include max(map-get($breakpoints, "md")) {
+       padding-right:0;  
+      }
+      &:before {
+        right: 0;
+      }
+    }
+  }
+
+
+  .list-items {
+    li {
+      background-position: right 0 !important;
+      padding-right: 40px;
+    }
+  }
+
+  .chooseImg{
+    &:before {
+      content: "";
+      background: map-get($colors, white);
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      border-radius: 0px 267.5px  0px 0px;
+    }
+    img {
+      border-radius: 0px 267.5px 0px 0px;
+      position: relative;
+      z-index: 10;
+      border-left: 2px dashed map-get($colors, secondary);
+      border-right:none;
+    }
+  }
+  .homeWhyChoose {
+    .right-whychoose{
+      margin-right:-75px;
+      margin-left:inherit;
+
+      @include max(map-get($breakpoints, "lg")) {
+        margin-right: 0;
+      }
+    }
+  }
+}

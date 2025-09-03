@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surechain</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0a2885;
+            --light-bg: #f6f8fa;
+        }
+        
+        body {
+            padding: 0 !important;
+            margin: 0 !important;
+            background-color: white !important;
+            font-family: "Poppins", sans-serif !important;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6, p, a, li, ul {
+            font-family: "Poppins", sans-serif !important;
+            font-weight: 500 !important;
+            padding: 0;
+            margin: 0;
+            line-height: 1.5em !important;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700 !important;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .blue-button {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid var(--primary-blue);
+            font-weight: 500;
+        }
+        
+        .blue-button:hover {
+            background-color: transparent;
+            color: var(--primary-blue);
+        }
+        
+        .transparent-button {
+            background-color: transparent;
+            color: var(--primary-blue);
+            padding: 12px 24px;
+            border-radius: 5px;
+            border: 2px solid var(--primary-blue);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .transparent-button:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .transparent-button-white {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            border: 2px solid #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .transparent-button-white:hover {
+            background-color: #ffffff;
+            color: var(--primary-blue);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            padding: 40px 20px;
+            margin: 40px 0;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700 !important;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-img-section img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Logo Carousel */
+        .logo-carousel {
+            background-color: var(--light-bg);
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+        
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .swiper-slide img {
+            max-width: 120px;
+            height: auto;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .swiper-slide img:hover {
+            opacity: 1;
+        }
+        
+        /* Tabs Section */
+        .tabs-section {
+            padding: 40px 20px;
+            margin: 40px 0;
+        }
+        
+        .resp-tabs-list.hor_1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            border: none;
+        }
+        
+        .resp-tabs-list.hor_1 li {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px 20px;
+            background-color: var(--light-bg);
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: none;
+        }
+        
+        .resp-tabs-list.hor_1 li.resp-tab-active {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .resp-tabs-container.hor_1 {
+            padding: 30px;
+            background-color: var(--primary-blue);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .tabs-inner {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .tabs h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .vert-right img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        /* Seller/Buyer Sections */
+        .seller-section, .buyer-section {
+            padding: 40px 20px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .categories {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .categories-left, .categories-right, .buyer-right {
+            flex: 1;
+        }
+        
+        .categories-right, .buyer-right {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .categories-right img, .buyer-right img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        .categories-left ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+        
+        .categories-left li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .categories-left li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.65em;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: var(--primary-blue);
+        }
+        
+        /* Leaders Section */
+        .leaders {
+            background-color: var(--light-bg);
+            padding: 60px 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .leader-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .leader-logos img {
+            max-height: 80px;
+            width: auto;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 40px 20px;
+            margin: 40px 0;
+            display: flex;
+            gap: 40px;
+        }
+        
+        .faq-left {
+            flex: 1;
+        }
+        
+        .faq-right {
+            flex: 2;
+        }
+        
+        .faq-list {
+            width: 100%;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            color: #000;
+            font-size: 18px;
+            text-align: left;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            font-size: 16px;
+            color: #444;
+            padding: 0 0 20px 0;
+            display: none;
+        }
+        
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.open .faq-arrow {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 60px 20px;
+            margin-top: 40px;
+            background-color: var(--primary-blue);
+            color: white;
+            display: flex;
+            gap: 40px;
+            border-radius: 10px;
+        }
+        
+        .cta-left, .cta-right {
+            flex: 1;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .tabs-inner {
+                flex-direction: column;
+            }
+            
+            .resp-tabs-list.hor_1 li {
+                min-width: 150px;
+                font-size: 14px;
+                padding: 12px 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section-both, .seller-section, .buyer-section, .faq, .cta {
+                flex-direction: column;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+            
+            .section-subtitle {
+                text-align: center;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+            
+            .hero-section p {
+                text-align: center;
+            }
+            
+            .categories-left {
+                text-align: center;
+            }
+            
+            .resp-tabs-list.hor_1 {
+                flex-direction: column;
+            }
+            
+            .leader-logos {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .leader-logos1, .leader-logos2 {
+                border-right: none;
+                border-bottom: 1px solid #000;
+                padding-bottom: 30px;
+                margin-bottom: 30px;
+            }
+            
+            .faq-left {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .cta {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section, .tabs-section, .seller-section, .buyer-section, .faq {
+                padding: 20px 15px;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .blue-button, .transparent-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .resp-tabs-container.hor_1 {
+                padding: 20px;
+            }
+            
+            .categories-right, .buyer-right {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="load"></div>
+
+    <!-- Simplified Header for demo -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/img/fav.png" alt="Surechain" height="40">
+                <span class="ms-2 fw-bold">Surechain</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">For Buyers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">For Sellers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0 d-flex flex-column flex-lg-row gap-2">
+                    <a class="blue-button text-center" href="#">Login</a>
+                    <a class="transparent-button text-center" href="#">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main content starts-->
+    <main>
+        <!-- hero section starts -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row hero-section-both align-items-center">
+                    <div class="col-lg-5 hero-content-section" data-aos="fade-up" data-aos-duration="400">
+                        <h1>Grow Your Business with Verified B2B Connections</h1>
+                        <p>Verify businesses, showcase your products, network with trusted partners, and close deals faster, all in one platform.</p>
+                        <div class="hero-buttons">
+                            <a class="blue-button" href="#">Know more</a>
+                            <a class="transparent-button" href="#">Get Early Access</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1 hero-img-section" data-aos="fade-down" data-aos-duration="400">
+                        <img src="./img/Landing-pages-SureChain.png" alt="Surechain Platform" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero section ends -->
+
+        <!-- logo carousel section start -->
+        <section class="logo-carousel">
+            <div class="container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="/img/fav.png" alt="Partner Logo" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="/img/fav.png" alt="Partner Logo" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="/img/fav.png" alt="Partner Logo" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="/img/fav.png" alt="Partner Logo" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="/img/fav.png" alt="Partner Logo" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="/img/fav.png" alt="Partner Logo" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="/img/fav.png" alt="Partner Logo" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="/img/fav.png" alt="Partner Logo" class="img-fluid"></div>
+                        <div class="swiper-slide"><img src="/img/fav.png" alt="Partner Logo" class="img-fluid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- logo carousel section end -->
+
+        <!-- tabs section start -->
+        <section class="platform-features tabs-section">
+            <div class="container">
+                <h2 class="mb-2 font-bold text-center section-title" data-aos="fade-up" data-aos-duration="600">The Uncompromising Platform for B2B Services</h2>
+                <h6 class="text-center section-subtitle" data-aos="fade-up" data-aos-duration="650">Discover. Compare. Procure with Confidence.</h6>
+
+                <!-- Horizontal Tab -->
+                <div class="parentHorizontalTab nested-tab mt-5" data-aos="fade-up" data-aos-duration="700">
+                    <ul class="resp-tabs-list hor_1 mb-4">
+                        <li>Trade & Networking</li>
+                        <li>Trust & Compliance</li>
+                        <li>Efficiency & Speed</li>
+                        <li>Growth & Insights</li>
+                    </ul>
+                    <div class="resp-tabs-container hor_1">
+                        <div>
+                            <div class="ChildVerticalTab_1">
+                                <div class="row tabs-inner">
+                                    <div class="col-md-5 tabs">
+                                        <h2>Trust & Compliance</h2>
+                                        <p>Every profile is verified, so you trade only with credible partners. Reduce risk, increase confidence, and stay compliant with ease.</p>
+                                    </div>
+                                    <div class="col-md-6 offset-md-1 vert-right">
+                                        <img src="./img/buyer.jpg" alt="Trust and Compliance" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="ChildVerticalTab_1">
+                                <div class="row tabs-inner">
+                                    <div class="col-md-5 tabs">
+                                        <h2>Efficiency Tools</h2>
+                                        <p>Streamline your operations with our efficient tools designed to save you time and resources in your B2B transactions.</p>
+                                    </div>
+                                    <div class="col-md-6 offset-md-1 vert-right">
+                                        <img src="./img/buyer.jpg" alt="Efficiency Tools" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="ChildVerticalTab_1">
+                                <div class="row tabs-inner">
+                                    <div class="col-md-5 tabs">
+                                        <h2>Growth Opportunities</h2>
+                                        <p>Identify new growth opportunities with our insights and analytics tools designed to help your business expand.</p>
+                                    </div>
+                                    <div class="col-md-6 offset-md-1 vert-right">
+                                        <img src="./img/buyer.jpg" alt="Growth Opportunities" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="ChildVerticalTab_1">
+                                <div class="row tabs-inner">
+                                    <div class="col-md-5 tabs">
+                                        <h2>Networking Features</h2>
+                                        <p>Connect with the right partners through our advanced networking features designed to foster valuable business relationships.</p>
+                                    </div>
+                                    <div class="col-md-6 offset-md-1 vert-right">
+                                        <img src="./img/buyer.jpg" alt="Networking Features" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- tabs section end -->
+
+        <!-- for sellers section -->
+        <section class="seller-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 categories-left" data-aos="fade-right">
+                        <p class="categories">For Sellers</p>
+                        <h2 class="mb-2 font-bold section-title">Connect with Verified Buyers Who Mean Business.</h2>
+                        <p>Showcase your products, gain visibility with the right audience, and turn enquiries into long-term partnerships.</p>
+                        <ul>
+                            <li><strong>Verified Buyers, Real Demand:</strong> Connect with genuine Indian businesses actively sourcing.</li>
+                            <li><strong>Purchase-Ready Enquiries:</strong> Receive quote requests from buyers ready to trade.</li>
+                            <li><strong>Product Promotion:</strong> Highlight your offerings with Surechain Ads.</li>
+                            <li><strong>Build Credibility:</strong> Verified profiles and ratings make you stand out.</li>
+                        </ul>
+                        <a class="blue-button mt-3" href="#">Know more</a>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1 categories-right" data-aos="fade-left">
+                        <img src="../img/seller.png" alt="For Sellers" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- for seller section end -->
+
+        <!-- for buyer section -->
+        <section class="buyer-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 buyer-right" data-aos="fade-right">
+                        <img src="../img/seller.png" alt="For Buyers" class="img-fluid">
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 categories-left" data-aos="fade-left">
+                        <p class="categories">For Buyers</p>
+                        <h2 class="mb-2 font-bold section-title">Discover Verified Suppliers You Can Trust.</h2>
+                        <p>Simplify procurement by connecting with verified sellers and building long-term partnerships you can rely on.</p>
+                        <ul>
+                            <li><strong>Verified Sellers:</strong> Every seller is vetted for trust and compliance.</li>
+                            <li><strong>Easy Discovery:</strong> Search, filter, and compare product listings in minutes.</li>
+                            <li><strong>Trusted Networking:</strong> Build long-term supply relationships.</li>
+                            <li><strong>Reduced Risk:</strong> Cut errors and trade delays with verified partners.</li>
+                        </ul>
+                        <a class="blue-button mt-3" href="#">Know more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- for buyer section end -->
+
+        <!-- for verified section -->
+        <section class="seller-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 categories-left" data-aos="fade-right">
+                        <p class="categories">Verified Network</p>
+                        <h2 class="mb-2 font-bold section-title">Why Businesses Choose Surechain to Scale Their Trade</h2>
+                        <p>Built for reliability, speed, and growth. Surechain brings trust, transparency, and smarter workflows to India's B2B trade ecosystem.</p>
+                        <ul>
+                            <li><strong>100% Verified Businesses:</strong> Every member is authenticated through rigorous checks.</li>
+                            <li><strong>Secure Transactions:</strong> Trade with confidence using our secure platform.</li>
+                            <li><strong>Industry Insights:</strong> Access market data and trends to make informed decisions.</li>
+                            <li><strong>Dedicated Support:</strong> Get assistance whenever you need it from our expert team.</li>
+                        </ul>
+                        <a class="blue-button mt-3" href="#">Know more</a>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1 categories-right" data-aos="fade-left">
+                        <img src="../img/seller.png" alt="Verified Network" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- for verified section end -->
+
+        <!-- Recognized by Industry Leaders -->
+        <section class="leaders">
+            <div class="container">
+                <h2 class="mb-2 font-bold section-title text-center" data-aos="fade-up">Recognized by Industry Leaders</h2>
+                <p class="text-center">Surechain is already making waves in India's B2B ecosystem.</p>
+                <div class="row leader-logos justify-content-center">
+                    <div class="col-md-4 col-8 leader-logos1 my-3" data-aos="fade-up" data-aos-delay="100">
+                        <img src="../img/logo.png" alt="Industry Leader" class="img-fluid">
+                    </div>
+                    <div class="col-md-4 col-8 leader-logos2 my-3" data-aos="fade-up" data-aos-delay="200">
+                        <img src="../img/logo.png" alt="Industry Leader" class="img-fluid">
+                    </div>
+                    <div class="col-md-4 col-8 leader-logos3 my-3" data-aos="fade-up" data-aos-delay="300">
+                        <img src="../img/logo.png" alt="Industry Leader" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Recognized by Industry Leaders end-->
+
+        <!-- faq  -->
+        <section class="faq">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <div class="faq-left" data-aos="fade-right">
+                            <h2 class="mb-2 font-bold section-title">Frequently Asked Questions</h2>
+                            <p>Everything you need to know before getting started with Surechain.</p>
+                            <a class="blue-button mt-3" href="#">Join the Network</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 faq-right" data-aos="fade-left">
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Who can register on Surechain?</span>
+                                    <span class="faq-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 10l5 5 5-5" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="faq-answer">
+                                    Any business—manufacturers, wholesalers, distributors, retailers, or service providers—can register. Surechain is exclusively built for B2B trade, not for individual consumers.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Is registration free?</span>
+                                    <span class="faq-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 10l5 5 5-5" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="faq-answer">
+                                    Yes. Basic registration is free. You can upgrade later to premium plans for advanced features and higher visibility.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I know the buyers or sellers are genuine?</span>
+                                    <span class="faq-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 10l5 5 5-5" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="faq-answer">
+                                    Every business is verified through GST and compliance checks before joining. This ensures you connect only with credible and trustworthy partners.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I list products or post requirements?</span>
+                                    <span class="faq-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 10l5 5 5-5" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="faq-answer">
+                                    Sellers can upload products from their dashboard after verification. Buyers can post RFQs (requirements) and receive multiple quotes to compare.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Is my business data secure?</span>
+                                    <span class="faq-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 10l5 5 5-5" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="faq-answer">
+                                    Yes. Surechain uses industry-standard encryption and strict data protection protocols so your business information and trade history remain private and secure.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- faq end -->
+
+        <!-- cta section start -->
+        <section class="cta">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 cta-left" data-aos="fade-right">
+                        <h2>Empowering Businesses Through Trust and Transparency</h2>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1 cta-right" data-aos="fade-left">
+                        <p>Join India's most trusted B2B network. Trade smarter, grow faster, and build partnerships with confidence.</p>
+                        <a class="transparent-button-white mt-3" href="#">Get Early Access</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- cta section end -->
+    </main>
+    <!-- main content ends -->
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Surechain</h5>
+                    <p>Empowering Indian MSMEs through trust, technology, and transparency.</p>
+                </div>
+                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
+                    <h5 class="mb-3">For Businesses</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">How it works</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Buyers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Sellers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Need Help?</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Email: besure@surechain.ai</li>
+                        <li class="mb-2">Phone: +91 76688 76699</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-3">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Terms & Conditions</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Compliance & Security</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Marketplace Declaration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">© 2023 Surechain. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- scripts-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            easing: 'ease-in-out-sine',
+            duration: 800,
+            once: true
+        });
+
+        // Initialize Swiper
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 6,
+                    spaceBetween: 40,
+                },
+            },
+        });
+
+        // FAQ functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const button = item.querySelector('.faq-question');
+            button.addEventListener('click', () => {
+                item.classList.toggle('open');
+            });
+        });
+
+        // Simple tabs functionality for demo
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.resp-tabs-list.hor_1 li');
+            const tabContents = document.querySelectorAll('.resp-tabs-container.hor_1 > div');
+            
+            tabButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('resp-tab-active'));
+                    // Add active class to clicked button
+                    button.classList.add('resp-tab-active');
+                    
+                    // Hide all tab contents
+                    tabContents.forEach(content => content.style.display = 'none');
+                    // Show the selected tab content
+                    if (tabContents[index]) {
+                        tabContents[index].style.display = 'block';
+                    }
+                });
+            });
+            
+            // Activate first tab by default
+            if (tabButtons.length > 0) {
+                tabButtons[0].click();
+            }
+        });
+    </script>
+</body>
+
+</html>

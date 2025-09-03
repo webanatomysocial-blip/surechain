@@ -1,0 +1,1236 @@
+@import "variable";
+@import "mixin";
+@import "styles-rtl";
+
+//font styles
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include siteMain;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  background: #f4f7ff;
+}
+
+body.fade-out {
+  opacity: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: map-get($font-weights, bold);
+  margin: 0;
+  padding: 0;
+  line-height: 160%;
+}
+
+p {
+  line-height: 160%;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.custom-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.default-btn {
+  font-size: $fsize + 1;
+  text-align: center;
+  padding: 10px 25px;
+  @include transition(all, 0.2s ease);
+  display: inline-block;
+  border-radius: 6px;
+}
+
+.primary-btn {
+  background: map-get($colors, primary);
+  color: map-get($colors, black);
+  @extend .default-btn;
+
+  &:hover {
+    background: darken(map-get($colors, primary), 10%);
+  }
+}
+
+.secondary-btn {
+  background: map-get($colors, secondary);
+  color: map-get($colors, white);
+  @extend .default-btn;
+
+  &:hover {
+    background: darken(map-get($colors, secondary), 10%);
+  }
+}
+
+.primary-btn-border {
+  background: none;
+  color: map-get($colors, black);
+  @extend .default-btn;
+  border: 1px solid map-get($colors, darksecondary);
+
+  &:hover {
+    background: map-get($colors, darksecondary);
+    color: map-get($colors, white);
+    order: 1px solid map-get($colors, darksecondary);
+  }
+}
+
+header {
+  padding: 10px 0;
+  position: relative;
+
+  @include max(map-get($breakpoints, "md")) {
+    height:auto;
+  }
+
+  .navbar-mobile {
+    .nav-link {
+      @include max(map-get($breakpoints, "xl")) {
+        display: block !important;
+        background: lighten(map-get($colors, secondary), 30%);
+        padding: 10px 15px !important;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      .navbar-nav {
+        @include max(map-get($breakpoints, "xl")) {
+          margin-left: 0 !important;
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  .navbar {
+    background: none;
+
+    .navbar-brand {
+      img {
+        width: 229px;
+
+        @include max(map-get($breakpoints, "xl")) {
+          width: 150px;
+        }
+      }
+    }
+    .activenav {
+      display: block;
+      padding: 20px 15px;
+      color: map-get($colors, lightprimary);
+      font-weight: map-get($font-weights, semibold);
+      // text-decoration: underline;
+
+      @include max(map-get($breakpoints, "xl")) {
+        text-decoration: none;
+        background: map-get($colors, primary);
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        color:map-get($colors, white);
+      }
+    }
+    .nav-link {
+      font-weight: map-get($font-weights, semibold);
+
+      &:hover {
+        color: map-get($colors, lightsecondary) !important;
+      }
+    }
+    .dropdown {
+      .navbar-nav {
+        padding: 15px;
+        @include box-shadow(2px, 2px, 10px map-get($colors, gray));
+
+        .nav-link {
+          border-radius: 5px;
+          &:hover {
+            background: map-get($colors, primary);
+            color: map-get($colors, white) !important;
+          }
+        }
+      }
+      .activenav {
+        display: block;
+        padding: 20px 15px;
+
+        .caret {
+          border-top: 4px solid map-get($colors, lightprimary);
+        }
+      }
+    }
+    .activesubnav {
+      background: map-get($colors, primary);
+      color: map-get($colors, secondary) !important;
+      display: block;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      border-radius: 5px;
+    }
+  }
+}
+
+.navbar-toggler {
+  &:focus {
+    @include max(map-get($breakpoints, "xl")) {
+      box-shadow: none;
+    }
+  }
+}
+
+.hero {
+  h1 {
+    font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+    font-weight: 700;
+    color: map-get($colors, primary);
+    margin-bottom: 20px;
+  }
+  .search {
+    background: map-get($colors, white);
+    border-radius: 75px;
+    padding: 15px 25px;
+    display: flex;
+    @include box-shadow(0, 0, 10px rgba(0, 0, 0, 0.1));
+
+    .bi {
+      padding-top: 8px;
+    }
+  }
+  .search-block {
+    margin: 15% 0;
+  }
+
+  .numbers {
+    background: url("../img/outlineimg.png") no-repeat center center;
+    min-height: 200px;
+    padding: 15% 0;
+
+    @include max(map-get($breakpoints, "md")) {
+      padding: 5% 0;
+      min-height: auto;
+    }
+  }
+
+  .hero-image {
+    position: relative;
+    img {
+      border-radius: 25px;
+
+      @include max(map-get($breakpoints, "md")) {
+        border-radius: 5px;
+      }
+    }
+  }
+  .hero-image-overlay {
+    border-radius: 15px;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+
+    @include max(map-get($breakpoints, "lg")) {
+      border-radius: 5px;
+    }
+
+    article {
+      width: 90%;
+
+      @include max(map-get($breakpoints, "lg")) {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: clamp(0.9rem, 1.8vw, 1.8rem);
+        color: map-get($colors, white);
+        font-weight: 500;
+        margin-bottom: 25px;
+        line-height: 160%;
+
+        @include max(map-get($breakpoints, "lg")) {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+.section-padding {
+  padding-top: 5rem;
+}
+
+.intro-video {
+  background: url(../img/introbg.png) no-repeat center center;
+  background-size: contain;
+  margin-top: 100px;
+  background-size: cover;
+  padding: 100px 0;
+  min-height: 480px;
+
+  @include max(map-get($breakpoints, "lg")) {
+    padding: 50px 0;
+    min-height: auto;
+    margin-top: 50px;
+  }
+}
+
+.section-title {
+  font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.section-subtitle {
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  color: map-get($colors, gray);
+  line-height: 150%;
+}
+
+.platform-features {
+  margin-top: 100px;
+
+  @include max(map-get($breakpoints, "lg")) {
+    margin-top: 50px;
+    min-height: 600px;
+    overflow-y: auto;
+  }
+
+  .resp-vtabs li.resp-tab-active {
+    position: relative;
+    z-index: 1;
+    padding: 15px 15px !important;
+    border-top: 1px solid;
+    background: #fff !important;
+  }
+  .resp-tab-active {
+    color: #fff;
+  }
+}
+
+.nested-tab {
+  .resp-tab-item {
+    h6 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+      padding-top: 10px;
+      padding-bottom: 0;
+      color: map-get($colors, gray);
+    }
+  }
+  ul.hor_1 {
+    display: flex;
+    justify-content: center;
+
+    @include max(map-get($breakpoints, "md")) {
+      display: none;
+    }
+
+    li {
+      min-width: 350px;
+      text-align: center;
+      border-radius: 10px;
+
+      @include max(map-get($breakpoints, "lg")) {
+        min-width: auto;
+      }
+    }
+  }
+}
+
+.industry-card {
+  position: relative;
+  margin-bottom: 25px;
+
+  article {
+    border-radius: 10px 10px 0 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) -8.18%, #000 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    height: 50%;
+
+    h5 {
+      text-transform: uppercase;
+      font-size:clamp(0.8rem, 1.2vw, 1.2rem);
+    }
+
+    p {
+      font-size: 14px !important;
+      color: white;
+      @include transition(all, 0.3s ease);
+      opacity: 0;
+      padding-top: 10px;
+    }
+  }
+
+  &:hover {
+    article p {
+      opacity: 1;
+    }
+  }
+}
+
+.features-labels-list {
+  text-align: center;
+  li {
+    padding: 10px 25px;
+    margin: 10px 10px;
+    background: map-get($colors, white);
+    border-radius: 50px;
+    display: inline-block;
+    @include box-shadow(0, 0, 10px rgba(0, 0, 0, 0.1));
+    font-size: 15px;
+    color: map-get($colors, primary);
+    font-weight: 500;
+
+    @include max(map-get($breakpoints, "lg")) {
+      margin: 5px;
+      padding: 10px 15px;
+      font-size: 12px;
+    }
+  }
+}
+
+.surechainfeatures {
+  .resp-tabs-container {
+    width: 80%;
+    margin: 0 auto;
+
+    @include max(map-get($breakpoints, "lg")) {
+      width: 100%;
+    }
+  }
+  .resp-tab-active {
+    color: #fff;
+  }
+}
+
+.download-app {
+  background: url(../img/talktousbg.png) no-repeat center center;
+  background-size: cover;
+  padding: 50px 0 0 0;
+  margin-bottom: 100px;
+
+  .appimg {
+    width: 150px;
+  }
+}
+
+.blog-card {
+  // height: 100%;
+  margin-bottom:15px;
+
+  @include max(map-get($breakpoints, "md")) {
+    height: auto;
+  }
+  article {
+    border-radius: 0 0 12px 12px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 75.52%);
+    p {
+      color: map-get($colors, white);
+    }
+  }
+
+  &:hover {
+    atciele {
+      p {
+        color: map-get($colors, secondary);
+      }
+    }
+  }
+}
+
+footer {
+  .talktous {
+    margin-top: -220px;
+    margin-bottom: 50px;
+
+    .talkcontainer {
+      background: var(
+        --Gradients-Sure-Gradient,
+        linear-gradient(11deg, #0a2885 -38.28%, #8b99f4 171.87%)
+      );
+      box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.25);
+      padding: 40px;
+      border-radius: 15px;
+    }    
+  }
+  background: #11275f;
+  padding: 150px 0 50px 0;
+  margin-top: 130px;
+
+  @include max(map-get($breakpoints, "lg")) {
+    margin-top: 100px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+  }
+
+  .top-footer {
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    @include max(map-get($breakpoints, "lg")) {
+      padding-bottom: 20px;
+    }
+  }
+
+  .footer-social {
+    li {
+      a {
+        background: rgba(225, 225, 225, 0.1);
+        color: map-get($colors, white);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        @include transition(all, 0.3s ease);
+
+        &:hover {
+          background: map-get($colors, secondary);
+          color: map-get($colors, white);
+        }
+      }
+    }
+  }
+}
+
+.btn-talk {
+      background: #f2ce30;
+      padding: 15px 25px;
+      border-radius: 50px;
+      color: #000;
+      display: inline-block;
+
+      &:hover{
+         background: #eec200;
+      }
+    }
+
+.bottom-footer {
+  padding: 50px 0;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  @include max(map-get($breakpoints, "lg")) {
+    padding: 20px 0;
+    margin-bottom: 15px;
+  }
+}
+.footer-links {
+  color: white;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+
+  li {
+    margin-bottom: 10px;
+    a {
+      color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.sub-page {
+  min-height: 200px;
+  padding-bottom: 50px;
+}
+
+.subpage-header {
+  background: url(../img/subpagebg.png) no-repeat center center;
+  min-height: 300px;
+  background-size: cover;
+  width: 100%;
+  padding: 7% 0;
+
+    @include max(map-get($breakpoints, "lg")) {
+    min-height: auto;
+  }
+
+  
+
+  h1 {
+    font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+
+    @include max(map-get($breakpoints, "lg")){
+      margin-bottom:0;
+    }
+  }
+}
+
+.subpage-content {
+  padding: 3rem 0;
+
+  h2 {
+    font-size: clamp(1rem, 2vw, 2rem);
+    margin-bottom: 15px;
+    color: map-get($colors, primary);
+  }
+  p {
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+    color: map-get($colors, gray);
+    margin-bottom: 20px;
+  }
+}
+
+.bluetitlebg {
+  background: url(../img/bluetitlebg.png) no-repeat top center;
+  width: 100%;
+  height: 341px;
+}
+
+.vision-mission {
+  margin-top: -200px;
+  padding-bottom: 60px;
+
+  @include max(map-get($breakpoints, "lg")) {
+    padding-bottom:15px;
+  }
+
+  .visionmission-row {
+    background: map-get($colors, white);
+  }
+}
+
+.core-values {
+  margin-top: 67px;
+
+  @include max(map-get($breakpoints, "lg")) {
+    margin-top: 20px;
+  }
+
+  .valuecard {
+    height: 100%;
+    @include max(map-get($breakpoints, "md")) {
+      height: auto;
+      margin-bottom:15px;
+    }
+    img {
+      width: 72px;
+    }
+  }
+}
+
+.platform-evolution {
+  margin: 67px 0;
+  overflow: hidden;
+  padding-bottom: 20px;
+
+  .evolution-card {
+    overflow: hidden;
+    height: 380px;
+    @include max(map-get($breakpoints, "md")) {
+      margin-bottom:15px;
+      // height: auto;
+    }
+    .circle {
+      background: #af97ff;
+      opacity: 0.4;
+      width: 222px;
+      height: 222px;
+      border-radius: 50%;
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      filter: blur(100px);
+    }
+
+    .ivolimg {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: auto;
+    }
+  }
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.team-swiper {
+  .swiper-wrapper {
+    padding-bottom: 60px;
+    transform: translate3d(204.375px, 0px, 0px);
+
+    .swiper-slide {
+      position: relative;
+
+      .team-card {
+        article {
+          bottom: 10px;
+          left: 12px;
+          right: 10px;
+          width: 90%;
+          padding: 10px;
+
+          h5 {
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
+            margin: 0;
+            padding: 0;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-box {
+  margin-top: -100px;
+
+  @include max(map-get($breakpoints, "lg")) {
+    margin-top: -50px;
+  }
+}
+
+.faqtab {
+  h2{
+    margin:0;
+
+    .bi{
+      @include max(map-get($breakpoints, "md")) {
+        display: none;
+      }
+    }
+  }
+  .resp-vtabs .resp-tabs-list li {
+    border-radius: 0 !important;
+    background: none !important;
+  }
+  li.resp-tab-active {
+    color: #0098ac !important;
+  }
+  .resp-tabs-list {
+    li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+      border-radius: 0;
+      padding-left: 0;
+    }
+  }
+  ul.resp-tabs-list {
+    width: 25% !important;
+  }
+  .resp-tabs-container {
+    width: 70% !important;
+
+    @include max(map-get($breakpoints, "md")) {
+      width: 100%!important;
+    }
+  }
+}
+
+.accordion-title-section {
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  margin-bottom: 20px;
+}
+
+.accordion-item {
+  border: 1px solid #dee2e6 !important;
+  background: none;
+  margin-top: 10px;
+  .accordion-header {
+    .accordion-button {
+      background: rgba(238, 242, 246, 0.7);
+      padding: 0 18px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  .accordion-body {
+    background: none;
+    padding: 20px;
+  }
+}
+
+.about-connect{
+  ul.list-items{
+    li{
+      color: map-get($colors, white) !important;
+    }
+  }
+}
+
+.about-connect,
+.connect-tab {
+  background: #11275f;
+  padding: 68px 0;
+
+  @include max(map-get($breakpoints, "lg")) {
+    padding: 20px 0;
+  }
+
+
+  .ul.list-items{
+    li{
+      color: map-get($colors, white) !important;
+    }
+  }
+}
+
+ul.list-items {
+  li {
+    
+    position: relative;
+    padding-bottom: 10px;
+
+    &:before {
+      content: "\e909";
+      font-family: "icomoon" !important;
+      font-size: 18px;
+      margin-right: 15px;
+    }
+  }
+}
+
+
+.easy-steps{
+  .nested-tab{
+    h2.resp-tab-active{
+      @include max(map-get($breakpoints, "xl")) {
+        color:white;
+      }
+      p, h6{
+        @include max(map-get($breakpoints, "xl")) {
+        color:white;
+      }
+      }
+    }
+  }
+}
+
+.connect-tab-container {
+  overflow: hidden;
+
+  .resp-vtabs ul.resp-tabs-list {
+    width: 50%;   
+
+    li {
+      h6 {
+        color: map-get($colors, white) !important;
+        font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+      }
+      .number {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid map-get($colors, white);
+        // background:map-get($colors, white);
+        display: block;
+        text-align: center;
+        line-height: 32px;
+        font-size: 14px;
+        font-weight: 600;
+        color: map-get($colors, white);
+      }
+    }
+    .resp-tab-active{
+      .number{
+        background: map-get($colors, white);
+        color: #11275f;
+      }
+      article{
+      p{
+        color: map-get($colors, white)!important;
+      }     
+      }
+    }
+  }
+  .resp-vtabs .resp-tabs-container {
+    width: 50%;
+    text-align: center;
+
+     @include max(map-get($breakpoints, "md")) {
+      width: 100%;
+    }
+  }
+}
+
+.resp-tabs-container{
+  border:none!important;
+}
+
+.custom-table{
+  thead{
+    th{
+      background:map-get($colors, primary);
+      color:map-get($colors, white);
+      padding:10px;
+    }
+  }
+  tbody{
+    tr{
+      td{
+        padding:10px;
+      }
+      &:nth-of-type(odd){
+        td{
+          background:#F3F0FF;
+        }
+      }
+    }
+  }
+}
+
+.finance-tab{
+  padding-bottom:150px;
+}
+
+.finance-tab-container{
+  margin-top:-120px;
+
+   .nested-tab ul.hor_1 li{
+      min-width:auto;
+      background:#EDF2FF;
+      padding:15px;
+      border-radius:50px;
+    }
+
+    .resp-tab-active{
+      color:map-get($colors, white);
+
+      @include max(map-get($breakpoints, "md")) {
+        color:map-get($colors, white);
+        background:map-get($colors, primary)!important;        
+      }
+      
+    }
+
+  .finance-in-tab{
+    padding:80px;
+    background:#EDF2FF;
+    border-radius:25px;
+    width:70%;
+    margin:0 auto;   
+
+    @include max(map-get($breakpoints, "md")) {
+      width: 100%;
+      padding:15px;
+    }
+  }
+
+  h2{
+    margin:0;
+  }
+
+  .resp-tab-content{
+    @include max(map-get($breakpoints, "md")) {
+      border:1px solid rgb(193, 193, 193);
+    }
+  }
+}
+
+.cards-container{
+  .valuecard{
+    margin-bottom:10px;
+    img{
+      width:60px;
+    }
+  }
+}
+
+.price-row{
+  .col-md-4{
+    &:nth-child(2){
+      .price-col{
+        .price-col-header{
+          background:#46B4E7;
+
+          .label{
+            background:#008fd1;
+            padding:10px 25px;
+            border-radius:30px;
+          }
+        }
+      }
+    }
+
+     &:nth-child(3){
+      .price-col{
+        
+        .price-col-header{
+          background:#004e72;
+
+          .label{
+             background:#00334b;
+            padding:10px 25px;
+            border-radius:30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.price-col{
+  background:map-get($colors, white);
+  .price-col-header{
+    background:#0A2885;
+    text-align: center;
+    padding:44px 0;
+    color:#fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    .label{
+      background:#001350;
+      padding:10px 25px;
+      border-radius:30px;
+    }
+    h2{
+      color:map-get($colors, white);
+      margin:20px 0;  
+      font-size:35px;
+      font-weight: normal;
+
+      span{
+        font-size:15px;
+      }
+    }
+    p{
+      font-size:16px;
+      font-weight: 600;
+    }
+    .svg-bg{
+      bottom:-1px;
+      left:0;
+      right:1px;
+      width:100%;     
+    }
+  }
+  .price-col-body{
+    padding:4rem 2rem;
+
+    ul{
+      li{
+        margin-bottom:15px;
+        position: relative;
+        padding-left:45px;
+
+        &:before{
+          content:"\F26E";
+          width:30px;
+          height: 30px;
+          background:map-get($colors, primary);
+          position: absolute;
+          left:0;
+          top:0;
+          border-radius:50%;
+          color:map-get($colors, white);
+          font-family: bootstrap-icons !important;
+          text-align: center;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+  .btn-talk{
+    width:90%;
+    margin:0 auto;
+  }
+}
+
+
+.Addons{
+  background:#11275F;
+  padding:4rem 0 14rem 0;
+}
+
+.features-block{
+  margin-top:-170px;  
+
+  .container{
+    background:map-get($colors, white);
+    padding-top:50px;
+    padding-bottom:50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+}
+
+.compare-table{
+  thead{
+    tr{
+      th{
+        background:map-get($colors, primary);
+        color:map-get($colors, white);
+        border:1px solid white;
+        padding:10px 15px;
+      }
+    }
+  }
+   tbody{
+    tr{
+      td{
+         background:#EDF2FF; 
+         border:1px solid white;
+         padding:10px 15px;
+      }
+    }
+   }
+}
+
+.industry-cardpage{
+  border-radius:20px;
+  background:#EDF2FF;
+  height: 100%;
+
+    img.bannerimg{
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+    }
+ 
+ .article{
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+   position:relative;   
+   padding:65px 20px 20px 20px;
+
+   h5{
+    @include max(map-get($breakpoints, "md")) {
+      font-size: 1.2rem;
+    }
+   }
+   
+   .icon{
+    width:97px;
+    height: 97px;
+    background:white;
+    border-radius:50%;
+    margin:0 auto;
+    position: absolute;
+    top:-50px;
+    left:50%;
+    transform: translateX(-50%);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ }
+}
+
+.popularcategories{
+  background:#11275F;
+  padding:65px 0;
+
+  .icon{
+    width:85px;
+    height: 85px;
+    background:map-get($colors, lightgray);
+    border-radius:50%;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      width:50px;
+    }
+  }
+  h6{
+    font-size:clamp(0.9rem, 0.95vw, 0.95rem);
+    line-height: 1.3rem;
+    margin-top:15px;
+  }
+  p{
+    font-size:13px;
+    color:map-get($colors, gray);
+  }
+  .swiper-slide{
+    height: 100%;
+  }
+}
+
+.faqsection-page{
+  background:map-get($colors, white);
+  padding:65px 0;
+}
+
+.productstobuy-page{
+  .product-card{
+    img{
+      min-height: 100%;
+    }
+    a{
+      min-height: 80px;
+    }
+  }
+}
+
+.contact-container{
+  background:#11275f;
+  padding:75px 0;
+  margin:75px 0;
+
+  @include max(map-get($breakpoints, "md")) {
+    margin: 25px 0;
+    padding:25px 0;
+  }
+
+  .buyer-form{
+    width:75%;
+    margin:0 auto;
+
+    @include max(map-get($breakpoints, "md")) {
+      width:100%;
+    }
+  }
+}
+
+.form-floating{
+  .form-control{
+    &:focus{
+      box-shadow: none;
+      outline:none;
+    }
+  }
+}
+
+.place-col{
+  margin:25px 0;
+  .icon{
+    width:100px;
+    height: 100px;
+    border-radius:50%;
+    background:map-get($colors, primary);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+}

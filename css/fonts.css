@@ -1,0 +1,168 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?iqvxbd');
+  src:  url('../fonts/icomoon.eot?iqvxbd#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?iqvxbd') format('truetype'),
+    url('../fonts/icomoon.woff?iqvxbd') format('woff'),
+    url('../fonts/icomoon.svg?iqvxbd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  /* speak: never; */
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-telephone:before {
+  content: "\e92e";
+}
+.icon-tiktok:before {
+  content: "\e900";
+}
+.icon-snapchat:before {
+  content: "\e901";
+}
+.icon-instagram:before {
+  content: "\e902";
+}
+.icon-right-menu-bars:before {
+  content: "\e903";
+}
+.icon-agileprocess:before {
+  content: "\e904";
+}
+.icon-bar-chart:before {
+  content: "\e905";
+}
+.icon-blackplaceholder:before {
+  content: "\e906";
+}
+.icon-calculator:before {
+  content: "\e907";
+}
+.icon-call:before {
+  content: "\e908";
+}
+.icon-checklist-checked-box:before {
+  content: "\e909";
+}
+.icon-coding:before {
+  content: "\e90a";
+}
+.icon-consulting:before {
+  content: "\e90b";
+}
+.icon-consumer:before {
+  content: "\e90c";
+}
+.icon-development:before {
+  content: "\e90d";
+}
+.icon-email:before {
+  content: "\e90e";
+}
+.icon-envelopeblack:before {
+  content: "\e90f";
+}
+.icon-facebookicon:before {
+  content: "\e910";
+}
+.icon-google-plus:before {
+  content: "\e911";
+}
+.icon-integration:before {
+  content: "\e912";
+}
+.icon-interview:before {
+  content: "\e913";
+}
+.icon-left-arrow:before {
+  content: "\e914";
+}
+.icon-linkedin-logo:before {
+  content: "\e915";
+}
+.icon-medal:before {
+  content: "\e916";
+}
+.icon-network:before {
+  content: "\e917";
+}
+.icon-personal:before {
+  content: "\e918";
+}
+.icon-phone-call:before {
+  content: "\e919";
+}
+.icon-phone-call-black:before {
+  content: "\e91a";
+}
+.icon-placeholder:before {
+  content: "\e91b";
+}
+.icon-quotation-mark:before {
+  content: "\e91c";
+}
+.icon-right-arrow:before {
+  content: "\e91d";
+}
+.icon-shopping:before {
+  content: "\e91e";
+}
+.icon-social-media:before {
+  content: "\e91f";
+}
+.icon-startup:before {
+  content: "\e920";
+}
+.icon-support:before {
+  content: "\e921";
+}
+.icon-twittericon:before {
+  content: "\e922";
+}
+.icon-upicon:before {
+  content: "\e923";
+}
+.icon-web-page:before {
+  content: "\e924";
+}
+.icon-website:before {
+  content: "\e925";
+}
+.icon-arrowup:before {
+  content: "\e926";
+}
+.icon-flexible-hours:before {
+  content: "\e927";
+}
+.icon-holistic-learning:before {
+  content: "\e928";
+}
+.icon-child-ideas2:before {
+  content: "\e929";
+}
+.icon-child-ideas:before {
+  content: "\e92a";
+}
+.icon-values:before {
+  content: "\e92b";
+}
+.icon-language:before {
+  content: "\e92c";
+}
+.icon-home:before {
+  content: "\e92d";
+}
