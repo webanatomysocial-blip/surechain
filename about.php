@@ -180,8 +180,8 @@
                                         <h5>Srikanth Akula</h5>
                                         <p class="p-0 m-0"><small>Founder, Surechain</small></p>
                                         <div class="d-flex justify-content-between  pt-2 w-100">
-                                            <a href="javascript:void(0)" target="_blank" class="text-decoration-none text-primary"><i class="bi bi-linkedin h4"></i></a>
-                                            <a href="javascript:void(0)" target="_blank">
+                                            <a href="https://www.linkedin.com/in/srikanth123akula/" target="_blank" class="text-decoration-none text-primary"><i class="bi bi-linkedin h4"></i></a>
+                                            <a href="https://www.linkedin.com/in/srikanth123akula/" target="_blank">
                                                 <img src="img/rt-arrow-icon.png" alt="Right Arrow Icon">
                                             </a>
                                         </div>
@@ -196,8 +196,8 @@
                                         <h5>Krishna Swaroop </h5>
                                         <p class="p-0 m-0"><small>CPTO</small></p>
                                         <div class="d-flex justify-content-between  pt-2 w-100">
-                                            <a href="javascript:void(0)" target="_blank" class="text-decoration-none text-primary"><i class="bi bi-linkedin h4"></i></a>
-                                            <a href="javascript:void(0)" target="_blank">
+                                            <a href="https://www.linkedin.com/in/krishnaswarup/" target="_blank" class="text-decoration-none text-primary"><i class="bi bi-linkedin h4"></i></a>
+                                            <a href="https://www.linkedin.com/in/krishnaswarup/" target="_blank">
                                                 <img src="img/rt-arrow-icon.png" alt="Right Arrow Icon">
                                             </a>
                                         </div>
@@ -231,8 +231,8 @@
                                         <h5>Ayesha Ghazi </h5>
                                         <p class="p-0 m-0"><small>Marketing Manager & GTM Strategist </small></p>
                                         <div class="d-flex justify-content-between  pt-2 w-100">
-                                            <a href="javascript:void(0)" target="_blank" class="text-decoration-none text-primary"><i class="bi bi-linkedin h4"></i></a>
-                                            <a href="javascript:void(0)" target="_blank">
+                                            <a href="https://www.linkedin.com/in/ayesha-ghazi-b22a47362/" target="_blank" class="text-decoration-none text-primary"><i class="bi bi-linkedin h4"></i></a>
+                                            <a href="https://www.linkedin.com/in/ayesha-ghazi-b22a47362/" target="_blank">
                                                 <img src="img/rt-arrow-icon.png" alt="Right Arrow Icon">
                                             </a>
                                         </div>
@@ -248,8 +248,8 @@
                                         <h5>Harish R. Choudhury</h5>
                                         <p class="p-0 m-0"><small>Asst. Director Category Management </small></p>
                                         <div class="d-flex justify-content-between  pt-2 w-100">
-                                            <a href="javascript:void(0)" target="_blank" class="text-decoration-none text-primary"><i class="bi bi-linkedin h4"></i></a>
-                                            <a href="javascript:void(0)" target="_blank">
+                                            <a href="https://www.linkedin.com/in/harishrajchoudhary/" target="_blank" class="text-decoration-none text-primary"><i class="bi bi-linkedin h4"></i></a>
+                                            <a href="https://www.linkedin.com/in/harishrajchoudhary/" target="_blank">
                                                 <img src="img/rt-arrow-icon.png" alt="Right Arrow Icon">
                                             </a>
                                         </div>

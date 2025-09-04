@@ -925,6 +925,7 @@ footer{
   width:100%;
 }
 
+
   }
 
   
@@ -952,4 +953,11 @@ footer{
   color:white !important;
 }
 
+.navbar-collapse{
+  display: flex;
+  /* align-items: end; */
+  justify-content: end;
+  padding-left:60px !important;
+
+}
 

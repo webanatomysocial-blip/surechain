@@ -159,7 +159,7 @@ h2.resp-accordion:first-child {
 
     h2.resp-accordion {
         display: block;
-        background:none!important;
+        /* background:none!important; */
     }
 
     .resp-vtabs .resp-tab-content {

@@ -938,6 +938,7 @@ footer .footer-social li a:hover {
 ul.list-items li {
   position: relative;
   padding-bottom: 10px;
+  text-align: left;
 }
 ul.list-items li:before {
   content: "\e909";
@@ -1472,9 +1473,6 @@ padding-left:5%;
     height: 23.8vh !important;
     object-fit: cover !important;
 }
-.platform-features .resp-tab-active {
-    color: #000000;
-}
 .vert {
     width: 100%;
     padding: 10px;
@@ -1489,4 +1487,19 @@ padding-left:5%;
         height: 400px !important;
         margin: 20px 0;
     }
+
+.text-white-mb{
+  color:black !important;
+}
+.resp-tab-active h6{
+  color:white !important;
+}
+.resp-tab-active p{
+  color:white !important;
+}
+
+}
+
+.navbar-brand {
+    padding-right: 0vw !important;
 }

@@ -52,47 +52,47 @@
                             <ul class="resp-tabs-list ver_1">
                                 <li class="d-flex">
                                     <p class="number me-3">
-                                        <span class="text-white">1</span>
+                                        <span class="text-white text-white-mb">1</span>
                                     </p>
                                     <article>
-                                        <h6 class="text-white">Create Your Business Profile</h6>
-                                        <p class="font-regular text-white">Register and verify your company to start sourcing from trusted sellers.</p>
+                                        <h6 class="text-white text-white-mb">Create Your Business Profile</h6>
+                                        <p class="font-regular text-white text-white-mb">Register and verify your company to start sourcing from trusted sellers.</p>
                                     </article>
                                 </li>
                                 <li class="d-flex">
                                     <p class="number me-3">
-                                         <span class="text-white">2</span>
+                                         <span class="text-white text-white-mb">2</span>
                                     </p>
                                     <article>
-                                        <h6 class="text-white">Link Your Offerings</h6>
-                                        <p class="font-regular text-white">Add your products or services with rich descriptions and visuals.</p>
+                                        <h6 class="text-white text-white-mb">Link Your Offerings</h6>
+                                        <p class="font-regular text-white text-white-mb">Add your products or services with rich descriptions and visuals.</p>
                                     </article>
                                 </li>
                                 <li class="d-flex">
                                     <p class="number me-3">
-                                         <span class="text-white">3</span>
+                                         <span class="text-white text-white-mb">3</span>
                                     </p>
                                     <article>
-                                        <h6 class="text-white">Get Verified & Featured</h6>
-                                        <p class="font-regular text-white">Build trust and apply to be featured or sponsored on the platform</p>
+                                        <h6 class="text-white text-white-mb">Get Verified & Featured</h6>
+                                        <p class="font-regular text-white text-white-mb">Build trust and apply to be featured or sponsored on the platform</p>
                                     </article>
                                 </li>
                                 <li class="d-flex">
                                     <p class="number me-3">
-                                         <span class="text-white">4</span>
+                                         <span class="text-white text-white-mb">4</span>
                                     </p>
                                     <article>
-                                        <h6 class="text-white">Promote to the Right Audience</h6>
-                                        <p class="font-regular text-white">Boost visibility through sponsored listings, homepage banners, and more.</p>
+                                        <h6 class="text-white text-white-mb">Promote to the Right Audience</h6>
+                                        <p class="font-regular text-white text-white-mb">Boost visibility through sponsored listings, homepage banners, and more.</p>
                                     </article>
                                 </li>
                                 <li class="d-flex">
                                     <p class="number me-3">
-                                         <span class="text-white">5</span>
+                                         <span class="text-white text-white-mb">5</span>
                                     </p>
                                     <article>
-                                        <h6 class="text-white">Track Leads & Performance</h6>
-                                        <p class="font-regular text-white">Access your dashboard for engagement stats and conversion insights.</p>
+                                        <h6 class="text-white text-white-mb">Track Leads & Performance</h6>
+                                        <p class="font-regular text-white text-white-mb">Access your dashboard for engagement stats and conversion insights.</p>
                                     </article>
                                 </li>
                             </ul>
